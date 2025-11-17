@@ -1,0 +1,52 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <!-- Contact Us Section -->
+  <section id="contact-hero" class="hero-bg">
+    <h1>Get in Touch</h1>
+    <p>We're here to help you with any questions or inquiries. Fill out the form below and we'll get back to you as soon as possible.</p>
+  </section>
+
+  <!-- Contact Form Section -->
+<section id="contact-form-section" class="light-section">
+  <div class="form-container">
+    <h2>Contact Us</h2>
+    <!-- 1. Give the form an ID and remove the action/method attributes -->
+    <form id="contact-form" class="contact-form">
+      
+      <!-- 2. The Name and Email fields have been DELETED -->
+
+      <label for="subject">Subject</label>
+      <input type="text" id="subject" name="subject" placeholder="Enter the subject of your message" required>
+
+      <label for="message">Your Message</label>
+      <textarea id="message" name="message" placeholder="Enter your message" rows="6" required></textarea>
+
+      <button type="submit" class="btn">Send Message</button>
+
+      <!-- 3. Add a paragraph to display success/error messages -->
+      <p id="contact-form-message" style="margin-top: 15px; font-weight: bold;"></p>
+    </form>
+  </div>
+</section>
+
+  <!-- Contact Info Section -->
+  <section id="contact-info" class="subtle-section">
+    <h2>Contact Information</h2>
+    <div class="info-grid">
+      <div class="info-box">
+        <h3>Email</h3>
+        <p>info@sportstechinnovators.com</p>
+      </div>
+      <div class="info-box">
+        <h3>Hours</h3>
+        <p>Mon - Fri: 8am - 7pm</p>
+        <p>Sat - Sun: 12am - 5pm</p>
+      </div>
+    </div>
+  </section>
+
+  <%- include('partials/footer') %>
+  
+</body>
+</html>

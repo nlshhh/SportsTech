@@ -1,0 +1,82 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <!-- Hero Section -->
+  <section id="payment-hero" class="hero-bg">
+    <h1>Calculate your protien intake</h1>
+    <p>We offer the amount of protien you should take according to your BMI (Body Mass Index)!!</p>
+  </section>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h2>Protein that Your body needs</h2>
+
+    <div class="form-group">
+      <label for="weight">Enter your weight (kg):</label>
+      <input type="number" id="weight" placeholder="Your weight in kg" required>
+    </div>
+
+    <div class="form-group">
+      <label for="weight">Enter your height (cm):</label>
+      <input type="number" placeholder="Your height in kg" required>
+    </div>
+
+    <div class="form-group">
+      <label for="activity-level">Select your activity level:</label>
+      <select id="activity-level">
+        <option value="" disabled selected>Select your activity level</option>
+        <option value="sedentary">Cutting(Reducing Body Fat)</option>
+        <option value="very-active">Bulking(Gaining Muscle Mass)</option>
+      </select>
+    </div>
+
+    <button onclick="calculateProtein()">Calculate Protein</button>
+    <div id="protein-result" class="result">
+      <!-- Result will be shown here -->
+    </div>
+  </div><div class="image-section">
+    <img src="best-vegetarian-diet-for-maximum-protein-and-weight-loss-1727784710521.webp" alt="Our Gym">
+  </div>
+
+    <!-- Water Tracker Section -->
+ <section class="water-tracker-section">
+   <div class="container">
+     <h2>Keep a Track on your Water Intake</h2>
+     <p>Track your daily water intake to stay hydrated and healthy.</p>
+
+     <div class="tracker-container">
+       <div class="goal">
+         <label for="goal">Set Daily Goal (in liters):</label>
+         <input type="number" id="goal" placeholder="e.g., 2.5" step="0.1" min="0" />
+       </div>
+
+       <div class="intake">
+         <label for="intake">Enter Water Intake (in liters):</label>
+         <input type="number" id="intake" placeholder="e.g., 1.5" step="0.1" min="0" />
+       </div>
+
+       <button onclick="updateWaterProgress()">Update Intake</button>
+     </div>
+
+     <div id="progress-section">
+       <h3>Your Progress</h3>
+       <div class="progress-bar">
+         <div id="water-progress" class="progress"></div>
+       </div>
+       <div id="water-progress-text">0% - No Progress Yet</div>
+     </div><br><br>
+     <div id ="history-section">
+       <h3>Intake History</h3>
+       <ul id="water-history-list">
+       </ul></div>
+   </div>
+ </div><div class="image-section">
+   <img src="mineral-water-8cc11cec12c7471bac9378fa9757c83f.jpg" alt="Our Gym">
+ </div>
+
+ </section>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

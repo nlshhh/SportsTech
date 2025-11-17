@@ -1,0 +1,106 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <!-- Payment Plans Hero Section -->
+  <section id="payment-hero" class="hero-bg">
+    <h1>Choose Your Fitness Plan</h1>
+    <p>We offer flexible membership plans designed to meet your fitness needs. Select the plan that's right for you!</p>
+  </section>
+
+  <!-- Payment Plans Section -->
+  <section id="payment-plans" class="light-section">
+    <h2>Our Membership Plans</h2>
+    <div class="pricing-container">
+
+      <!-- Basic Plan -->
+      <div class="pricing-card">
+        <h3>Basic Plan</h3>
+        <div class="price">
+          <span>₹1000</span>/month
+        </div>
+        <ul>
+          <li>Access to all gym equipment</li>
+          <li>One personal training session</li>
+          <li>Access to standard classes</li>
+        </ul>
+        <a href="#" class="btn choose-plan-btn" data-plan="basic">Choose Basic</a>
+      </div>
+
+      <!-- Premium Plan -->
+      <div class="pricing-card popular">
+        <h3>Advanced Plan</h3>
+        <div class="price">
+          <span>₹1800</span>/month
+        </div>
+        <ul>
+          <li>Everything in Basic Plan</li>
+          <li>Unlimited group classes</li>
+          <li>3 personal training sessions</li>
+          <li>Free fitness gear</li>
+        </ul>
+        <a href="#" class="btn choose-plan-btn" data-plan="advanced">Choose Premium</a>
+      </div>
+
+      <!-- Pro Plan -->
+      <div class="pricing-card">
+        <h3>Pro Plan</h3>
+        <div class="price">
+          <span>₹3000</span>/month
+        </div>
+        <ul>
+          <li>Everything in Advanced Plan</li>
+          <li>Unlimited personal training</li>
+          <li>Access to VIP classes</li>
+          <li>Exclusive workout plans</li>
+        </ul>
+        <a href="#" class="btn choose-plan-btn" data-plan="pro">Choose Pro</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us Section -->
+  <section id="why-choose-us" class="subtle-section">
+    <h2>Why Choose Our Membership?</h2>
+    <div class="features-grid">
+      <div class="feature-box">
+        <h3>Flexible Plans</h3>
+        <p>We offer a range of plans to fit your schedule and fitness goals. Whether you're just starting or a fitness enthusiast, we have a plan for you.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Expert Trainers</h3>
+        <p>Our certified trainers are here to help you achieve your goals, offering personalized plans and continuous support.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Nutrition fulfillment</h3>
+        <p>We offer personalized protein intake recommendations tailored to your BMI (Body Mass Index) for optimal health and well-being.</p>
+      </div>
+
+      <div class="feature-box">
+        <h3>Community Driven</h3>
+        <p>Join a community of like-minded individuals who motivate and support each other. You're not just joining a gym, you're joining a family.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Section -->
+  <section id="cta" class="cta-bg">
+    <h2>Start Your Fitness Journey Today!</h2>
+    <p>Select the plan that fits your lifestyle and start your journey toward a healthier, fitter you.</p>
+    <p>Fill your details here and send to us after choosing a plan...</p>
+    <a href="contact.html" class="btn">Fill Details</a>
+  </section>
+
+  <div id="qr-modal" class="modal">
+    <div class="modal-content">
+      <span class="close-button">&times;</span>
+      <h2>Scan to Complete Payment</h2>
+      <img id="modal-qr-image" src="" alt="QR Code">
+      <p>Scan the QR code with your payment app.</p>
+    </div>
+  </div>
+
+<%- include('partials/footer') %>
+</body>
+</html>

@@ -1,0 +1,18 @@
+<nav>
+  <ul>
+    <li><a href="/" class="<%= (activePage === 'home') ? 'active' : '' %>">Home</a></li>
+    <li><a href="/balanced-diet.html" class="<%= (activePage === 'diet') ? 'active' : '' %>">Balanced Diet</a></li>
+    <li><a href="/protein.html" class="<%= (activePage === 'tracker') ? 'active' : '' %>">Nutrition Tracker</a></li>
+    <li><a href="/calorie-calculator.html" class="<%= (activePage === 'analyser') ? 'active' : '' %>">Calorie Analyser</a></li>
+    <li><a href="/payments.html" class="<%= (activePage === 'plans') ? 'active' : '' %>">Payment Plans</a></li>
+    <li><a href="/contact.html" class="<%= (activePage === 'contact') ? 'active' : '' %>">Contact</a></li>
+    
+    <li id="login-link">
+      <a href="/login.html" class="nav-button <%= (activePage === 'login') ? 'active-button' : '' %>">Login</a>
+    </li>
+    <li id="logout-link" style="display: none;">
+      <a href="#" id="logout-button" class="nav-button">Logout</a>
+    </li>
+  </ul>
+</nav>
+</header>

@@ -1,0 +1,62 @@
+<%- include('partials/header') %>
+<%- include('partials/nav') %>
+
+  <!-- Hero Section -->
+  <section id="payment-hero" class="hero-bg">
+    <h1>Calculate the calories, your body needs.</h1>
+    <p>Track your calories to make informed choices for a healthier lifestyle.</p>
+  </section>
+
+</div><div class="image-section">
+  <img src="By_photka.webp" alt="Our Gym">
+</div>
+
+  <!-- Calorie Analyzer Section -->
+  <section id="calorie-analyzer">
+    <div class="container">
+      <h2>Calorie Analyzer</h2>
+      <p>Use this tool to estimate your daily calorie requirements to maintain, lose, or gain weight based on your activity level.</p>
+
+      <div class="analyzer-container">
+        <!-- Input Fields for Age, Gender, Weight, Height, and Activity Level -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" placeholder="Enter your age" />
+
+        <label for="gender">Gender:</label>
+        <select id="gender">
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+
+        <label for="weight">Weight (kg):</label>
+        <input type="number" id="weight" placeholder="Enter your weight in kg" />
+
+        <label for="height">Height (cm):</label>
+        <input type="number" id="height" placeholder="Enter your height in cm" />
+
+        <label for="activity">Activity Level:</label>
+        <select id="activity">
+          <option value="1.2">Sedentary (little or no exercise)</option>
+          <option value="1.375">Lightly Active (light exercise 1-3 days/week)</option>
+          <option value="1.55">Moderately Active (moderate exercise 3-5 days/week)</option>
+          <option value="1.725">Very Active (hard exercise 6-7 days/week)</option>
+        </select><br>
+
+        <button onclick="calculateCalories()">Calculate Calories</button>
+
+        <div id="calorie-result">
+          <h3>Your Results:</h3>
+          <p id="bmr-result">Basal Metabolic Rate (BMR): <span id="bmr-amount">0</span> kcal/day</p>
+          <p id="tdee-result">Total Daily Energy Expenditure (TDEE): <span id="tdee-amount">0</span> kcal/day</p>
+        </div>
+      </div>
+    </div>
+  </div><div class="image-section">
+    <img src="1000-Calorie-Diet-Plan.webp" alt="Our Gym">
+  </div>
+  </section>
+  
+  <%- include('partials/footer') %>
+
+</body>
+</html>

@@ -14,9 +14,9 @@ const razorpay = new Razorpay({
 });
 
 const planDetails = {
-    'basic': { amount: 1000, name: 'Basic Plan' },
-    'advanced': { amount: 1800, name: 'Advanced Plan' },
-    'pro': { amount: 3000, name: 'Pro Plan' }
+    'basic': { amount: 1000 * 100, name: 'Basic Plan' },
+    'advanced': { amount: 1800 * 100, name: 'Advanced Plan' },
+    'pro': { amount: 3000 * 100, name: 'Pro Plan' }
 };
 
 // ROUTE 1: Create a new Razorpay order

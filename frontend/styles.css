@@ -1004,3 +1004,88 @@ nav ul {
   background-color: #008f7a; /* A slightly darker shade */
   box-shadow: inset 0 2px 4px rgba(0,0,0,0.2);
 }
+
+
+/* ========================================= */
+/*  RESPONSIVE STYLES (MEDIA QUERIES)        */
+/* ========================================= */
+
+/* Apply these styles ONLY when the screen is 768px wide or less (tablets and phones) */
+@media (max-width: 768px) {
+
+    /* --- General Layout --- */
+    body {
+        font-size: 16px; /* Adjust base font size for smaller screens */
+    }
+
+    /* --- Header & Navigation --- */
+    header {
+        flex-direction: column; /* Stack the logo and nav bar vertically */
+        padding: 10px 0;
+    }
+
+    nav ul {
+        flex-direction: column; /* Stack the nav links vertically */
+        width: 100%;
+        margin-right: 0;
+        padding: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0; /* Add vertical spacing between links */
+        text-align: center;
+    }
+
+    /* Make the login/logout button take full width */
+    #login-link, #logout-link {
+        margin-left: 0;
+        margin-right: 0;
+        padding: 0 20px;
+    }
+
+    .nav-button {
+        display: block; /* Make the button a block element to fill space */
+    }
+
+    /* --- Page Content Sections --- */
+    .content-wrapper, .mission-icons, .pricing-container, .features-grid, .info-grid {
+        flex-direction: column; /* Stack all multi-column layouts vertically */
+        align-items: center; /* Center the items */
+        gap: 20px;
+    }
+
+    .text-section {
+        max-width: 90%; /* Allow text sections to take up more width */
+        margin-left: 0;
+        text-align: center;
+    }
+    
+    .text-section p {
+        text-align: center;
+    }
+
+    .image-section img {
+        margin-left: 0; /* Remove the left margin on images */
+        max-width: 80%;
+    }
+
+    /* --- Forms and Containers --- */
+    .container {
+        width: 90%; /* Give containers a little more space */
+        padding: 15px;
+    }
+
+    .form-container {
+        padding: 20px;
+    }
+
+    .pricing-card, .icon-card, .feature-box, .info-box {
+        max-width: 90%; /* Allow cards to be wider on mobile */
+    }
+    
+    /* --- Hero Sections --- */
+    .hero-bg h1, .hero-content h1 {
+        font-size: 36px; /* Reduce the main heading size */
+    }
+
+}

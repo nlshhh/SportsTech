@@ -76,7 +76,7 @@ function initializePaymentButtons() {
                     currency: order.currency,
                     name: "SportsTech",
                     description: `Payment for ${plan.charAt(0).toUpperCase() + plan.slice(1)} Plan`,
-                    image: "/SportsTech.PNG",
+                    image: "/images/SportsTech.PNG",
                     order_id: order.id,
                     
                     // Step 3: Define the handler for successful payment

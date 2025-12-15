@@ -1021,113 +1021,103 @@ nav ul {
 /* Apply these styles ONLY when the screen is 768px wide or less */
 @media (max-width: 768px) {
 
-    /* --- Header & Nav Structure --- */
-    header {
-        /* Keep header items in a row but adjust spacing */
-        justify-content: space-between;
-        align-items: center;
-        padding: 5px 15px; /* Add some padding */
-    }
+    /* === HEADER & MAIN CONTENT FLOW FIX === */
+header {
+    position: fixed; /* Lock the header to the top of the viewport */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    justify-content: space-between; /* Pushes logo and hamburger to opposite ends */
+    padding: 10px 15px;
+    background-color: #333;
+    box-sizing: border-box; 
+}
 
-    .logo img {
-        margin-left: 0; /* Remove margin on mobile */
-    }
+main {
+    padding-top: 70px; /* IMPORTANT: Push all main content down below the fixed header */
+}
 
-    /* --- The Hamburger Icon Styling --- */
-    .nav-toggle-label {
-        display: block; /* Show the hamburger label */
-        cursor: pointer;
-        position: relative;
-        width: 30px;
-        height: 25px;
-    }
+.logo img {
+    height: 50px;
+    margin: 0;
+}
 
-    .nav-toggle-label span,
-    .nav-toggle-label span::before,
-    .nav-toggle-label span::after {
-        display: block;
-        background: white;
-        height: 3px;
-        width: 100%;
-        border-radius: 2px;
-        position: absolute;
-        transition: all 0.3s ease-in-out;
-    }
+/* === HAMBURGER MENU & ALIGNMENT FIX === */
+.nav-toggle-label {
+    display: block; cursor: pointer; width: 30px; height: 25px; z-index: 1001;
+}
+.nav-toggle-label span, .nav-toggle-label span::before, .nav-toggle-label span::after {
+    display: block; background: white; height: 3px; width: 100%;
+    border-radius: 2px; position: absolute; transition: all 0.3s;
+}
+.nav-toggle-label span::before { content: ''; top: -8px; }
+.nav-toggle-label span::after { content: ''; top: 8px; }
 
-    .nav-toggle-label span::before {
-        content: '';
-        top: -8px;
-    }
+.nav-menu {
+    position: fixed; top: 0; right: -100%; width: 70%; max-width: 280px;
+    height: 100vh; background-color: #2d2d2d; padding-top: 80px;
+    transition: right 0.4s ease-in-out; z-index: 1000;
+}
 
-    .nav-toggle-label span::after {
-        content: '';
-        top: 8px;
-    }
-    
-    /* --- The Menu Itself --- */
-    .nav-menu {
-        /* Hide the menu off-screen to the right by default */
-        position: fixed;
-        top: 0;
-        right: -100%; /* Start off-screen */
-        width: 70%;
-        height: 100vh;
-        background-color: #333;
-        padding-top: 60px;
-        transition: right 0.4s ease-in-out;
-        z-index: 100;
-    }
+.nav-menu ul {
+    flex-direction: column; align-items: center;
+}
 
-    .nav-menu ul {
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-    }
+/* NEW: This centers the text and makes the button look correct */
+.nav-menu ul li {
+    width: 85%;
+    text-align: center;
+}
 
-    .nav-menu ul li {
-        margin: 15px 0;
-        width: 80%;
-    }
-
-    .nav-menu .nav-button {
-        display: block;
-        text-align: center;
-    }
-
-    /* --- The Magic: Show the menu when the checkbox is checked --- */
-    .nav-toggle:checked ~ .nav-menu {
-        right: 0; /* Slide the menu into view */
-    }
-
-    /* Animate hamburger icon to an "X" when menu is open */
-    .nav-toggle:checked ~ .nav-toggle-label span {
-        background: transparent;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::before {
-        transform: rotate(45deg);
-        top: 0;
-    }
-
-    .nav-toggle:checked ~ .nav-toggle-label span::after {
-        transform: rotate(-45deg);
-        top: 0;
-    }
+/* Checkbox logic for opening/closing menu */
+.nav-toggle:checked ~ .nav-menu { right: 0; }
+.nav-toggle:checked ~ .nav-toggle-label span { background: transparent; }
+.nav-toggle:checked ~ .nav-toggle-label span::before { transform: rotate(45deg); top: 0; }
+.nav-toggle:checked ~ .nav-toggle-label span::after { transform: rotate(-45deg); top: 0; }
 
 
-    /* --- General Layout Fixes from Before --- */
-    .content-wrapper, .mission-icons, .pricing-container, .features-grid, .info-grid {
-        flex-direction: column;
-        align-items: center;
-        gap: 20px;
+/* === FORM FIELD ALIGNMENT FIX === */
+/* This targets all inputs, selects, and textareas inside our forms */
+.form-group input, .form-group select, .contact-form textarea,
+#calorie-analyzer input, #calorie-analyzer select {
+    width: 100%; /* Make the field take up the full width of its container */
+    max-width: 100%; /* Override any desktop max-width constraints */
+    box-sizing: border-box; /* IMPORTANT: Include padding/border in the total width */
+}
+
+
+/* === General Content Stacking (from before) === */
+.content-wrapper, .mission-icons, .pricing-container, .features-grid, .info-grid {
+    flex-direction: column;
+}
+.text-section, .pricing-card, .icon-card, .feature-box, .info-box {
+    max-width: 90%; margin: 0;
+}
+/* Set a comfortable base font size for all paragraph text */
+    body {
+        font-size: 16px; 
     }
 
-    .text-section, .pricing-card, .icon-card, .feature-box, .info-box {
-        max-width: 90%;
-        margin: 0;
+    /* Make the main page titles (H1) slightly smaller than desktop */
+    h1, .hero-bg h1, .hero-content h1 {
+        font-size: 2em; /* This will be 2 * 16px = 32px */
     }
 
-    .image-section img {
-        margin: 0;
+    /* Make section titles (H2) smaller and adjust line height */
+    h2, .section-title {
+        font-size: 1.6em; /* Approx 26px */
+        line-height: 1.3;
+    }
+
+    /* Adjust card/feature titles (H3) */
+    h3 {
+        font-size: 1.25em; /* Approx 20px */
+    }
+
+    /* Ensure paragraph text within specific sections is consistent */
+    p, .text-section p, .section-content p {
+        font-size: 1em; /* This will be 16px */
+        line-height: 1.6; /* Add more spacing between lines for readability */
     }
 }

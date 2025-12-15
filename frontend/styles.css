@@ -1007,85 +1007,127 @@ nav ul {
 
 
 /* ========================================= */
-/*  RESPONSIVE STYLES (MEDIA QUERIES)        */
+/*  MOBILE NAVIGATION & HAMBURGER MENU       */
 /* ========================================= */
 
-/* Apply these styles ONLY when the screen is 768px wide or less (tablets and phones) */
+/* Hide the hamburger icon on desktop */
+.nav-toggle-label {
+    display: none;
+}
+.nav-toggle {
+    display: none;
+}
+
+/* Apply these styles ONLY when the screen is 768px wide or less */
 @media (max-width: 768px) {
 
-    /* --- General Layout --- */
-    body {
-        font-size: 16px; /* Adjust base font size for smaller screens */
-    }
-
-    /* --- Header & Navigation --- */
+    /* --- Header & Nav Structure --- */
     header {
-        flex-direction: column; /* Stack the logo and nav bar vertically */
-        padding: 10px 0;
+        /* Keep header items in a row but adjust spacing */
+        justify-content: space-between;
+        align-items: center;
+        padding: 5px 15px; /* Add some padding */
     }
 
-    nav ul {
-        flex-direction: column; /* Stack the nav links vertically */
+    .logo img {
+        margin-left: 0; /* Remove margin on mobile */
+    }
+
+    /* --- The Hamburger Icon Styling --- */
+    .nav-toggle-label {
+        display: block; /* Show the hamburger label */
+        cursor: pointer;
+        position: relative;
+        width: 30px;
+        height: 25px;
+    }
+
+    .nav-toggle-label span,
+    .nav-toggle-label span::before,
+    .nav-toggle-label span::after {
+        display: block;
+        background: white;
+        height: 3px;
         width: 100%;
-        margin-right: 0;
-        padding: 0;
+        border-radius: 2px;
+        position: absolute;
+        transition: all 0.3s ease-in-out;
     }
 
-    nav ul li {
-        margin: 10px 0; /* Add vertical spacing between links */
+    .nav-toggle-label span::before {
+        content: '';
+        top: -8px;
+    }
+
+    .nav-toggle-label span::after {
+        content: '';
+        top: 8px;
+    }
+    
+    /* --- The Menu Itself --- */
+    .nav-menu {
+        /* Hide the menu off-screen to the right by default */
+        position: fixed;
+        top: 0;
+        right: -100%; /* Start off-screen */
+        width: 70%;
+        height: 100vh;
+        background-color: #333;
+        padding-top: 60px;
+        transition: right 0.4s ease-in-out;
+        z-index: 100;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+    }
+
+    .nav-menu ul li {
+        margin: 15px 0;
+        width: 80%;
+    }
+
+    .nav-menu .nav-button {
+        display: block;
         text-align: center;
     }
 
-    /* Make the login/logout button take full width */
-    #login-link, #logout-link {
-        margin-left: 0;
-        margin-right: 0;
-        padding: 0 20px;
+    /* --- The Magic: Show the menu when the checkbox is checked --- */
+    .nav-toggle:checked ~ .nav-menu {
+        right: 0; /* Slide the menu into view */
     }
 
-    .nav-button {
-        display: block; /* Make the button a block element to fill space */
+    /* Animate hamburger icon to an "X" when menu is open */
+    .nav-toggle:checked ~ .nav-toggle-label span {
+        background: transparent;
     }
 
-    /* --- Page Content Sections --- */
+    .nav-toggle:checked ~ .nav-toggle-label span::before {
+        transform: rotate(45deg);
+        top: 0;
+    }
+
+    .nav-toggle:checked ~ .nav-toggle-label span::after {
+        transform: rotate(-45deg);
+        top: 0;
+    }
+
+
+    /* --- General Layout Fixes from Before --- */
     .content-wrapper, .mission-icons, .pricing-container, .features-grid, .info-grid {
-        flex-direction: column; /* Stack all multi-column layouts vertically */
-        align-items: center; /* Center the items */
+        flex-direction: column;
+        align-items: center;
         gap: 20px;
     }
 
-    .text-section {
-        max-width: 90%; /* Allow text sections to take up more width */
-        margin-left: 0;
-        text-align: center;
-    }
-    
-    .text-section p {
-        text-align: center;
+    .text-section, .pricing-card, .icon-card, .feature-box, .info-box {
+        max-width: 90%;
+        margin: 0;
     }
 
     .image-section img {
-        margin-left: 0; /* Remove the left margin on images */
-        max-width: 80%;
+        margin: 0;
     }
-
-    /* --- Forms and Containers --- */
-    .container {
-        width: 90%; /* Give containers a little more space */
-        padding: 15px;
-    }
-
-    .form-container {
-        padding: 20px;
-    }
-
-    .pricing-card, .icon-card, .feature-box, .info-box {
-        max-width: 90%; /* Allow cards to be wider on mobile */
-    }
-    
-    /* --- Hero Sections --- */
-    .hero-bg h1, .hero-content h1 {
-        font-size: 36px; /* Reduce the main heading size */
-    }
-
 }

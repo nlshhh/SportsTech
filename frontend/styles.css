@@ -1044,7 +1044,10 @@ nav ul {
 
     /* === HAMBURGER MENU & ALIGNMENT FIX === */
     .nav-toggle-label {
-        display: block; cursor: pointer; width: 30px; height: 25px; z-index: 1001;
+        display: block; cursor: pointer; width: 10px;  /* Set a specific, smaller width */
+        height: 10px;
+        margin-left: 280px;
+        flex-shrink: 0; position: relative; z-index: 1001;
     }
     .nav-toggle-label span,
     .nav-toggle-label span::before,
@@ -1102,6 +1105,7 @@ nav ul {
     }
 
     /* === FONT SIZE FIXES === */
+    
     h1, .hero-bg h1, .hero-content h1 { font-size: 2em; }
     h2, .section-title { font-size: 1.6em; }
     p, .text-section p, .section-content p { line-height: 1.6; }
